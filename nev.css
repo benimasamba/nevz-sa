@@ -1,0 +1,122 @@
+
+    :root {
+      --primary: #FF69B4;
+      --light: #fff;
+      --text: #333;
+      --shadow: rgba(0,0,0,0.1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Roboto', sans-serif; background: var(--light); color: var(--text); }
+    h1,h2,h3 { font-family: 'Playfair Display', serif; }
+    img { max-width: 100%; display: block; border-radius: 8px; }
+
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--light); box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+    }
+    nav .logo { font-weight: bold; font-size: 1.2rem; }
+    .center-nav {
+      position: absolute; left: 50%; transform: translateX(-50%);
+    }
+    nav ul { display: flex; gap: 1rem; list-style: none; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover { color: var(--primary); }
+    .btn-primary {
+      background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 25px;
+      transition: 0.3s; text-decoration: none; display: inline-block;
+    }
+    .btn-primary:hover { background: #e5559f; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; cursor: pointer; gap: 5px;
+    }
+    .hamburger span {
+      width: 25px; height: 3px; background: var(--text); border-radius: 3px;
+      transition: 0.3s;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .nav-links.active {
+      display: block;
+      position: absolute; top: 70px; left: 0; right: 0;
+      background: var(--light); text-align: center; padding: 1rem 0;
+      flex-direction: column; gap: 1rem;
+    }
+
+    /* Hero */
+    #hero {
+     background: url('/nevz/assets/element5-digital-Xf7o2W7qgP0-unsplash.jpg') center/cover no-repeat; 
+      min-height: 90vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; color: white; padding: 2rem;
+      position: relative;
+    }
+    #hero::after {
+      content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.4);
+    }
+    #hero .content { position: relative; z-index: 1; max-width: 700px; }
+    #hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    #hero p { font-size: 1.1rem; margin-bottom: 2rem; }
+
+    /* Section base */
+    section { padding: 5rem 1.5rem; max-width: 1100px; margin: auto; text-align: center; }
+
+    /* Services + Gallery shared cards */
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;
+    }
+    .card {
+      position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px var(--shadow);
+    }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(255,255,255,0.9); padding: 0.5rem 1rem;
+    }
+    .card-info h3 { margin: 0; font-size: 1rem; color: var(--primary); }
+    .card-info span { font-weight: bold; }
+
+    .book-btn { margin-top: 2rem; display: inline-block; }
+
+    /* Gallery */
+    #extra-images { display: none; }
+
+    /* Testimonials */
+    .slider { overflow: hidden; position: relative; margin-top: 2rem; }
+    .slides { display: flex; transition: transform 0.5s ease-in-out; }
+    .testimonial { min-width: 100%; padding: 1.5rem; }
+    .testimonial blockquote { font-style: italic; margin-bottom: 0.5rem; }
+
+    /* Policy */
+    .policy {
+      background: #f9f9f9; border-radius: 10px; padding: 2rem;
+      box-shadow: 0 4px 10px var(--shadow); margin-top: 2rem; text-align: center;
+    }
+    .policy h2 { text-align: center; color: var(--primary); margin-bottom: 1rem; }
+    .policy ul { margin-top: 1rem; list-style: none; padding: 0; }
+    .policy li { margin-bottom: 0.5rem; }
+
+    /* Footer */
+    footer { background: var(--text); color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
+
+    /* Floating Book Button */
+    .floating-btn {
+      position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white;
+      padding: 1rem 1.5rem; border-radius: 50px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      font-weight: bold; z-index: 999; text-decoration: none;
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      #hero h1 { font-size: 1.8rem; }
+      #hero p { font-size: 1rem; }
+      .nav-links { display: none; flex-direction: column; gap: 1rem; width: 100%; }
+      .hamburger { display: flex; }
+      .center-nav { position: static; transform: none; margin: auto; }
+      .btn-primary{display: none;}
+    }
